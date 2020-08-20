@@ -5,7 +5,6 @@ __pycache__
 .env
 .idea
 env
-.flaskenv
 *.db
 htmlcov/
 .coverage
