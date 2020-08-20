@@ -1,21 +1,10 @@
-from flask import Flask, escape, url_for
-app = Flask(__name__)
-
-
-@app.route('/index')
-@app.route('/home')
-def home():
-    return u'欢迎来到我的 Watchlist!'
-
-
-@app.route('/')
-def hello():
-    return '<h1>Hello Totoro!</h1><img src="http://helloflask.com/totoro.gif">'
-
-
-@app.route('/user/<name>')
-def user_page(name):
-    return '<h1>Hello, %s</h1>' % escape(name)
+import os
+import sys
+import click
+from flask import Flask, escape, url_for, render_template, request, redirect, flash
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 
 
 @app.route('/test')

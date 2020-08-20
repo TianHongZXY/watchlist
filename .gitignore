@@ -6,3 +6,7 @@ __pycache__
 .idea
 env
 .flaskenv
+*.db
+htmlcov/
+.coverage
+app.py
